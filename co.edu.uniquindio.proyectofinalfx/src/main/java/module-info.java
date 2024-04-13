@@ -6,6 +6,7 @@ module co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp {
     opens co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp to javafx.fxml;
     exports co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp;
     opens co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller;
-            exports co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller;
+    exports co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller;
+    opens co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model;
 
 }

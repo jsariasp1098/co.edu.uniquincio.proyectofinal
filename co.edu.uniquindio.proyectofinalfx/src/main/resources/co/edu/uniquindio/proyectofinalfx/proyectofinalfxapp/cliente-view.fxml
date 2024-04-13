@@ -13,42 +13,42 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller.GestionClienteController">
    <children>
-      <TabPane prefHeight="494.0" prefWidth="712.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="-6.0" prefHeight="546.0" prefWidth="804.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Cliente">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="649.0">
                      <children>
-                        <TextField fx:id="txtNombres" layoutX="127.0" layoutY="49.0" prefHeight="19.0" prefWidth="177.0" />
-                        <Label layoutX="271.0" prefHeight="29.0" prefWidth="171.0" text="Gestion de Clientes">
+                        <TextField fx:id="txtNombreCliente" layoutX="155.0" layoutY="49.0" prefHeight="24.0" prefWidth="214.0" />
+                        <Label layoutX="317.0" prefHeight="29.0" prefWidth="171.0" text="Gestion de Clientes">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
                         <Label layoutX="14.0" layoutY="53.0" text="Nombres" />
-                        <TextField fx:id="txtTipoIdentificacion" layoutX="127.0" layoutY="86.0" prefHeight="19.0" prefWidth="177.0" />
-                        <TextField fx:id="txtDireccion" layoutX="127.0" layoutY="123.0" prefHeight="19.0" prefWidth="177.0" />
-                        <TextField fx:id="txtApellidos" layoutX="489.0" layoutY="49.0" prefHeight="19.0" prefWidth="177.0" />
-                        <TextField fx:id="txtNumeroIdentificacion" layoutX="489.0" layoutY="86.0" prefHeight="19.0" prefWidth="177.0" />
-                        <TextField fx:id="txtEmail" layoutX="489.0" layoutY="123.0" prefHeight="19.0" prefWidth="177.0" />
-                        <Label layoutX="344.0" layoutY="53.0" text="Apellidos" />
+                        <TextField fx:id="txtTipoIdentificacionCliente" layoutX="155.0" layoutY="86.0" prefHeight="24.0" prefWidth="214.0" />
+                        <TextField fx:id="txtDireccionCliente" layoutX="155.0" layoutY="123.0" prefHeight="25.0" prefWidth="214.0" />
+                        <TextField fx:id="txtApellidoCliente" layoutX="578.0" layoutY="49.0" prefHeight="24.0" prefWidth="214.0" />
+                        <TextField fx:id="txtNumeroIdentificacionCliente" layoutX="578.0" layoutY="86.0" prefHeight="24.0" prefWidth="214.0" />
+                        <TextField fx:id="txtEmailCliente" layoutX="578.0" layoutY="123.0" prefHeight="24.0" prefWidth="214.0" />
+                        <Label layoutX="415.0" layoutY="53.0" text="Apellidos" />
                         <Label layoutX="15.0" layoutY="90.0" text="Tipo de Identifcacion" />
-                        <Label layoutX="344.0" layoutY="90.0" text="Numero deIdentifcacion" />
+                        <Label layoutX="415.0" layoutY="90.0" text="Numero deIdentifcacion" />
                         <Label layoutX="15.0" layoutY="127.0" text="Direccion" />
-                        <Label layoutX="354.0" layoutY="119.0" text="Email" />
+                        <Label layoutX="415.0" layoutY="119.0" text="Email" />
                         <Separator layoutX="19.0" layoutY="214.0" prefHeight="0.0" prefWidth="675.0" />
-                        <Button fx:id="btnCrearClientes" layoutX="301.0" layoutY="171.0" mnemonicParsing="false" onAction="#onCrearCliente" text="Crear" />
-                        <Button fx:id="btnActualizarCliente" layoutX="409.0" layoutY="171.0" mnemonicParsing="false" onAction="#onActualizarCliente" text="Actualizar" />
-                        <Button fx:id="btnEliminarCliente" layoutX="344.0" layoutY="426.0" mnemonicParsing="false" onAction="#onEliminarCliente" text="Borrar" />
-                        <TableView layoutY="217.0" prefHeight="189.0" prefWidth="712.0">
+                        <Button fx:id="btnCrearClientes" layoutX="296.0" layoutY="167.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="32.0" prefWidth="69.0" text="Crear" AnchorPane.bottomAnchor="317.0" AnchorPane.leftAnchor="296.0" AnchorPane.rightAnchor="435.0" AnchorPane.topAnchor="167.0" />
+                        <Button fx:id="btnActualizarCliente" layoutX="426.0" layoutY="167.0" mnemonicParsing="false" onAction="#onActualizarCliente" text="Actualizar" AnchorPane.bottomAnchor="317.0" AnchorPane.leftAnchor="426.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="167.0" />
+                        <Button fx:id="btnEliminarCliente" layoutX="366.0" layoutY="462.0" mnemonicParsing="false" onAction="#onEliminarCliente" prefHeight="33.0" prefWidth="73.0" text="Borrar" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="366.0" AnchorPane.rightAnchor="365.0" AnchorPane.topAnchor="462.0" />
+                        <TableView fx:id="tbCliente" layoutX="12.0" layoutY="217.0" prefHeight="236.0" prefWidth="780.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="ID Cliente" />
-                            <TableColumn prefWidth="75.0" text="Nombres" />
-                              <TableColumn prefWidth="75.0" text="Apellidos" />
-                              <TableColumn prefWidth="128.0" text="Tipo Identificacion" />
-                              <TableColumn prefWidth="134.0" text="No. Identificacion" />
-                              <TableColumn prefWidth="81.0" text="Direccion" />
-                              <TableColumn prefWidth="143.0" text="Email" />
+                            <TableColumn fx:id="tbIDCliente" prefWidth="70.0" text="ID Cliente" />
+                            <TableColumn fx:id="tbNombreCliente" prefWidth="104.0" text="Nombres" />
+                              <TableColumn fx:id="tbApellidoCliente" prefWidth="103.0" text="Apellidos" />
+                              <TableColumn fx:id="tbTipoIdentificacionCliente" prefWidth="121.0" text="Tipo Identificacion" />
+                              <TableColumn fx:id="tbIdentificacionCliente" prefWidth="118.0" text="No. Identificacion" />
+                              <TableColumn fx:id="tbDireccionCliente" prefWidth="128.0" text="Direccion" />
+                              <TableColumn fx:id="tbEmailCliente" prefWidth="134.0" text="Email" />
                           </columns>
                         </TableView>
                      </children>

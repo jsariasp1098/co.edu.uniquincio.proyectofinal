@@ -1,5 +1,7 @@
 package co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model;
 
+import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model.builder.ClienteBuilder;
+
 public class Cliente extends Persona{
     String idCliente;
 
@@ -17,6 +19,11 @@ public class Cliente extends Persona{
     }
 
     public void setIdCliente(String idCliente) {
+
         this.idCliente = idCliente;
+    }
+
+    public static ClienteBuilder Builder(){
+        return new ClienteBuilder();
     }
 }
