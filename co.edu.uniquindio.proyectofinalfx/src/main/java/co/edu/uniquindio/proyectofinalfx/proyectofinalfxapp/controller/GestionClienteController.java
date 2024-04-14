@@ -119,7 +119,59 @@ public class GestionClienteController {
     }
     @FXML
     void onCrearCliente(ActionEvent event) {
+        if(validarFormulario()) {
+            Cliente newCliente = crearCLiente();
+            if(modelFactory.crearCliente(newCliente)) {
+                listCliente.add(newCliente);
+                mostrarMensaje("Notificación Cliente", "Cliente creado", "El Cliente se ha creado con éxito", Alert.AlertType.INFORMATION);
+                limpiarCamposCliente();
+            }else {
+                mostrarMensaje("Notificación Cliente", "Cliente no creado", "El cliente ya existe", Alert.AlertType.ERROR);
+            }
+        }else{
+            mostrarMensaje("Notificación Cliente", "Cliente no creado", "Datos ingresados son invalidos", Alert.AlertType.ERROR);
+        }
+    }
 
+    private void limpiarCamposCliente() {
+        txtNombreCliente.setText("");
+        txtApellidoCliente.setText("");
+        txtTipoIdentificacionCliente.setText("");
+        txtNumeroIdentificacionCliente.setText("");
+        txtDireccionCliente.setText("");
+        txtEmailCliente.setText("");
+    }
+
+    private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
+        Alert aler = new Alert(alertType);
+        aler.setTitle(titulo);
+        aler.setHeaderText(header);
+        aler.setContentText(contenido);
+        aler.showAndWait();
+    }
+
+    private Cliente crearCLiente() {
+        return Cliente.Builder()
+                .apellidos(txtApellidoCliente.getText())
+                .nombre(txtNombreCliente.getText())
+                .tipoIdentificacion(txtTipoIdentificacionCliente.getText())
+                .numeroIdentificacion(txtNumeroIdentificacionCliente.getText())
+                .direccion(txtDireccionCliente.getText())
+                .email(txtEmailCliente.getText())
+                .Build();
+    }
+
+    private boolean validarFormulario() {
+        if (txtNombreCliente.getText().isEmpty()
+                || txtApellidoCliente.getText().isEmpty()
+                || txtTipoIdentificacionCliente.getText().isEmpty()
+                || txtNumeroIdentificacionCliente.getText().isEmpty()
+                || txtDireccionCliente.getText().isEmpty()
+                || txtEmailCliente.getText().isEmpty())
+                {
+            return false;
+        }
+        return true;
     }
 
     @FXML

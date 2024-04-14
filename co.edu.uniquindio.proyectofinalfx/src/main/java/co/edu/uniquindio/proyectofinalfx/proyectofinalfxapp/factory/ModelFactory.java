@@ -53,4 +53,8 @@ public class ModelFactory {
     public List<Cliente> obtenerCliente() {
         return prestamoObjeto.getListCliente();
     }
+
+    public boolean crearCliente(Cliente newCliente) {
+        return prestamoObjeto.crearCliente(newCliente);
+    }
 }
