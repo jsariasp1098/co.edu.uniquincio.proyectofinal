@@ -41,4 +41,28 @@ public class PrestamoObjeto {
         }
         return cliente;
     }
+
+    public boolean modificarCLiente(String numeroIdentificacion, Cliente clienteModificar) {
+        for (int i=0 ; i<getListCliente().size(); i++) {
+            if(getListCliente().get(i).getNumeroIdentificacion().equals(numeroIdentificacion)) {
+                getListCliente().get(i).setNumeroIdentificacion(clienteModificar.getNumeroIdentificacion());
+                getListCliente().get(i).setTipoIdentificacion(clienteModificar.getTipoIdentificacion());
+                getListCliente().get(i).setNombre(clienteModificar.getNombre());
+                getListCliente().get(i).setApellidos(clienteModificar.getApellidos());
+                getListCliente().get(i).setDireccion(clienteModificar.getDireccion());
+                getListCliente().get(i).setEmail(clienteModificar.getEmail());
+
+            }
+        }
+        return true;
+    }
+
+    public boolean eliminarCliente(Cliente clienteSeleccionado) {
+        if(clienteSeleccionado == null){
+            return  false;
+        }else{
+            getListCliente().remove(clienteSeleccionado);
+            return true;
+        }
+    }
 }

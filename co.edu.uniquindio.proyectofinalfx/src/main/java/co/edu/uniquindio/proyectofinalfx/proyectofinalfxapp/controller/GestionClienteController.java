@@ -107,7 +107,29 @@ public class GestionClienteController {
 
     @FXML
     void onActualizarCliente(ActionEvent event) {
-
+        if (clienteSeleccionado == null) {
+            mostrarMensaje("Notificación Cliente", "Cliente no modificado",
+                    "No hay cliente seleccionado", Alert.AlertType.ERROR);
+        }else{
+            Cliente clienteModificar = crearCLiente();
+            if(clienteModificar.getNombre().equals(clienteSeleccionado.getNombre())
+                    &&clienteModificar.getApellidos().equals(clienteSeleccionado.getApellidos())
+                    &&clienteModificar.getTipoIdentificacion().equals(clienteSeleccionado.getTipoIdentificacion())
+                    &&clienteModificar.getNumeroIdentificacion().equals(clienteSeleccionado.getNumeroIdentificacion())
+                    &&clienteModificar.getDireccion().equals(clienteSeleccionado.getDireccion())
+                    &&clienteModificar.getEmail().equals(clienteSeleccionado.getEmail())) {
+                mostrarMensaje("Notificación Cliente", "Cliente no Modificado",
+                        "No hay campos diferentes para modificar", Alert.AlertType.ERROR);
+            }else {
+                modelFactory.modificarCliente(clienteSeleccionado.getNumeroIdentificacion(), clienteModificar);
+                tbCliente.getItems().clear();
+                listCliente.addAll(modelFactory.obtenerCliente());
+                tbCliente.setItems(listCliente);
+                mostrarMensaje("Notificación Cliente", "Cliente Modificado",
+                        "Cliente modificado satisfactoriamente", Alert.AlertType.INFORMATION);
+                limpiarCamposCliente();
+            }
+        }
     }
 
         private void initview (){
@@ -176,7 +198,23 @@ public class GestionClienteController {
 
     @FXML
     void onEliminarCliente(ActionEvent event) {
+        if(clienteSeleccionado == null){
+            mostrarMensaje("Notificación Cliente", "Cliente no Eliminado",
+                    "No hay cliente seleccionado", Alert.AlertType.ERROR);
+        }else{
+            elimarCliente(clienteSeleccionado);
+        }
+    }
 
+    private void elimarCliente(Cliente clienteSeleccionado) {
+        boolean eliminar = modelFactory.eliminarCliente(clienteSeleccionado);
+        if(eliminar == true) {
+            listCliente.remove(clienteSeleccionado);
+            tbCliente.setItems(listCliente);
+            mostrarMensaje("Notificación Cliente", "Cliente Eliminado",
+                    "EL cliente fue eliminado", Alert.AlertType.INFORMATION);
+            limpiarCamposCliente();
+        }
     }
 
 }

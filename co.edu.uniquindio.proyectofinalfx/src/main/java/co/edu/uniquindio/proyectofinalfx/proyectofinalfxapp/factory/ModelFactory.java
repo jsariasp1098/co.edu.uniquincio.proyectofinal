@@ -57,4 +57,12 @@ public class ModelFactory {
     public boolean crearCliente(Cliente newCliente) {
         return prestamoObjeto.crearCliente(newCliente);
     }
+
+    public boolean modificarCliente(String numeroIdentificacion, Cliente clienteModificar) {
+        return prestamoObjeto.modificarCLiente(numeroIdentificacion, clienteModificar);
+    }
+
+    public boolean eliminarCliente(Cliente clienteSeleccionado) {
+        return prestamoObjeto.eliminarCliente(clienteSeleccionado);
+    }
 }
