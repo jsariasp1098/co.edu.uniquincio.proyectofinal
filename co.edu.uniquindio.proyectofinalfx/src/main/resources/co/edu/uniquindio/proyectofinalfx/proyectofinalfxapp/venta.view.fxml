@@ -1,14 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.VentaView"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="580.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller.GestionClienteController">
+    <children>
+        <TabPane layoutY="-6.0" prefHeight="587.0" prefWidth="804.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Venta">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="804.0">
+                            <children>
+                                <TextField fx:id="txtNombreVendedor" layoutX="89.0" layoutY="49.0" prefHeight="23.0" prefWidth="150.0" />
+                                <Label layoutX="329.0" prefHeight="29.0" prefWidth="148.0" text="Gestion de Venta">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbVendedor" layoutX="14.0" layoutY="53.0" text="Vendedor" />
+                                <TextField fx:id="txtIdClienteVenta" layoutX="90.0" layoutY="99.0" prefHeight="21.0" prefWidth="148.0" />
+                                <TextField fx:id="txtFechaVenta" layoutX="369.0" layoutY="49.0" prefHeight="20.0" prefWidth="99.0" />
+                                <TextField fx:id="txtDescripcionProductoVenta" layoutX="317.0" layoutY="155.0" prefHeight="20.0" prefWidth="150.0" />
+                                <TextField fx:id="txtDireccionCliienteVenta" layoutX="540.0" layoutY="99.0" prefHeight="19.0" prefWidth="150.0" />
+                                <Label fx:id="lbFechaVenta" layoutX="317.0" layoutY="53.0" text="Fecha" />
+                                <Label fx:id="lbNombreClienteVenta" layoutX="244.0" layoutY="103.0" text="Cliente" />
+                                <Label fx:id="lbIdClienteVenta" layoutX="12.0" layoutY="103.0" text="ID Cliente" />
+                                <Separator layoutX="58.0" layoutY="138.0" prefHeight="0.0" prefWidth="675.0" />
+                                <TableView fx:id="tbCliente" layoutX="12.0" layoutY="237.0" prefHeight="302.0" prefWidth="555.0">
+                                    <columns>
+                              <TableColumn fx:id="tbcIdProducto" prefWidth="71.0" text="Codigo" />
+                                        <TableColumn fx:id="tbcDescripcion" prefWidth="156.0" text="Decripcion Producto" />
+                                        <TableColumn fx:id="tbcCantidad" prefWidth="85.0" text="Cantidad" />
+                                        <TableColumn fx:id="tbcValorUnitario" prefWidth="84.0" text="Valor Unitario" />
+                                        <TableColumn fx:id="tbcPorcentajeDescuento" prefWidth="76.0" text="Descuento" />
+                                        <TableColumn fx:id="tbcValorTotal" prefWidth="86.0" text="Valor Total" />
+                                    </columns>
+                                </TableView>
+                        <TextField fx:id="txtNombreCliente" layoutX="317.0" layoutY="99.0" prefHeight="18.0" prefWidth="150.0" />
+                        <Button fx:id="btnBuscarClienteVenta" layoutX="699.0" layoutY="99.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="21.0" prefWidth="94.0" text="Buscar Cliente" />
+                        <Separator layoutX="58.0" layoutY="85.0" prefHeight="0.0" prefWidth="675.0" />
+                        <Label fx:id="lbDireccionClienteVenta" layoutX="477.0" layoutY="103.0" text="Direccion" />
+                        <Label fx:id="lbFechaVenta1" layoutX="537.0" layoutY="53.0" text="Numero Venta" />
+                        <TextField fx:id="txtFechaVenta1" layoutX="644.0" layoutY="49.0" prefHeight="20.0" prefWidth="110.0" />
+                        <Label fx:id="lbIdProductoVenta" layoutX="9.0" layoutY="159.0" text="ID producto" />
+                        <TextField fx:id="txtIdProducttoVenta" layoutX="90.0" layoutY="155.0" prefHeight="21.0" prefWidth="148.0" />
+                        <Label fx:id="lbDescripcionProductoVenta" layoutX="244.0" layoutY="159.0" text="Descripcion" />
+                        <Label fx:id="lbCantidadProductoVenta" layoutX="477.0" layoutY="159.0" text="Cantidad" />
+                        <TextField fx:id="txtCantidadProductoVenta" layoutX="540.0" layoutY="155.0" prefHeight="25.0" prefWidth="57.0" />
+                        <Label fx:id="lbDescuentoProductoVenta" layoutX="620.0" layoutY="159.0" text="Descuento" />
+                        <TextField fx:id="txtDescuentoProductoVenta" layoutX="690.0" layoutY="155.0" prefHeight="25.0" prefWidth="57.0" />
+                        <Button fx:id="btnBuscarProductoVenta" layoutX="217.0" layoutY="198.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Buscar Producto" />
+                        <Button fx:id="btnAgregarProductoVenta" layoutX="361.0" layoutY="198.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Agregar Producto" />
+                        <Button fx:id="btnRealizarVenta" layoutX="628.0" layoutY="423.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Realizar Venta" />
+                        <Button fx:id="btnCancelarVenta" layoutX="628.0" layoutY="465.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Cancelar Venta" />
+                        <Button fx:id="btnVentaNueva" layoutX="628.0" layoutY="504.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Nueva Venta" />
+                        <Label fx:id="lbValorTotalVenta" layoutX="585.0" layoutY="259.0" prefHeight="21.0" prefWidth="60.0" text="Valor Total" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtValorTotalVenta" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="259.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbValorDescuentoVenta" layoutX="585.0" layoutY="293.0" text="Valor Descuento" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtValorDescuentoVenta" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="290.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbValorPagarVenta" layoutX="585.0" layoutY="321.0" prefHeight="21.0" prefWidth="81.0" text="Valor a Pagar" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtValorPagarVenta" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="321.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbEfectivoRecibido" layoutX="586.0" layoutY="354.0" prefHeight="18.0" prefWidth="58.0" text="Efetivo" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtEfectivoRecibido" layoutX="689.0" layoutY="350.0" prefHeight="18.0" prefWidth="96.0" />
+                        <Label fx:id="lbCambioVenta" layoutX="585.0" layoutY="388.0" prefHeight="21.0" prefWidth="60.0" text="Cambio" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="txtCambioVenta" alignment="CENTER" contentDisplay="CENTER" layoutX="686.0" layoutY="388.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnBuscarPedidoEntregado" layoutX="501.0" layoutY="198.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="124.0" text="Pedidos Entregado" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
 </AnchorPane>
