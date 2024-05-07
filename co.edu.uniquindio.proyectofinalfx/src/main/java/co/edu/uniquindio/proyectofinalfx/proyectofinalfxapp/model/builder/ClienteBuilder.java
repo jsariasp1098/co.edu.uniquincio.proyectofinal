@@ -2,9 +2,12 @@ package co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model.builder;
 
 import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model.Cliente;
 
-public class ClienteBuilder {
-    String tipoIdentificacion, numeroIdentificacion, nombre, apellidos, direccion, email, idCliente;
+import java.util.Date;
 
+public class ClienteBuilder {
+    private String tipoIdentificacion, numeroIdentificacion, nombre, apellidos, direccion, email, idCliente;
+
+    Date fechaNacimiento, fechaCreacion;
     public ClienteBuilder() {
     }
     public ClienteBuilder nombre (String nombre){
@@ -35,7 +38,16 @@ public class ClienteBuilder {
         this.idCliente = idCliente;
         return this;
     }
+    public ClienteBuilder fechaNacimiento (Date fechaNacimiento){
+        this.fechaNacimiento = fechaNacimiento;
+        return this;
+    }
+    public ClienteBuilder fechaCreacion (Date fechaCreacion){
+        this.fechaCreacion = fechaCreacion;
+        return this;
+    }
     public Cliente Build (){
-        return new Cliente(tipoIdentificacion, numeroIdentificacion, nombre, apellidos, direccion, email, idCliente);
+        return new Cliente(tipoIdentificacion, numeroIdentificacion, nombre, apellidos,
+                direccion, email, idCliente, fechaNacimiento, fechaCreacion);
     }
 }

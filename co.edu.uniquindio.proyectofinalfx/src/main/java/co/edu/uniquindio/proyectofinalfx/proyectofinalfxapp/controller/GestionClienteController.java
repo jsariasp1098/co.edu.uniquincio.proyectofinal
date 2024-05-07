@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 
 
 public class GestionClienteController {
@@ -16,6 +17,7 @@ public class GestionClienteController {
     ModelFactory modelFactory;
 
     ObservableList<Cliente> listCliente = FXCollections.observableArrayList();
+    ObservableList<Cliente> listClienteFiltro = FXCollections.observableArrayList();
     Cliente clienteSeleccionado;
 
     @FXML
@@ -26,6 +28,9 @@ public class GestionClienteController {
 
     @FXML
     private Button btnEliminarCliente;
+
+    @FXML
+    private Label lbBuscar;
 
     @FXML
     private TableColumn<Cliente, String> tbApellidoCliente;
@@ -53,6 +58,9 @@ public class GestionClienteController {
 
     @FXML
     private TextField txtApellidoCliente;
+
+    @FXML
+    private TextField txtBuscarCliente;
 
     @FXML
     private TextField txtDireccionCliente;
@@ -140,6 +148,22 @@ public class GestionClienteController {
         listenerSelection();
     }
     @FXML
+    void filtrarNombreApellido(KeyEvent event) {
+        String filtre = txtBuscarCliente.getText();
+        if(filtre.isEmpty()){
+            tbCliente.setItems(listCliente);
+        }else{
+            listClienteFiltro.clear();
+            for (Cliente cliente1: listCliente) {
+                if (cliente1.getNombre().toLowerCase().contains(filtre.toLowerCase())||
+                        cliente1.getNumeroIdentificacion().toLowerCase().contains(filtre.toLowerCase())){
+                    listClienteFiltro.add(cliente1);
+                }
+            }
+            tbCliente.setItems(listClienteFiltro);
+        }
+    }
+    @FXML
     void onCrearCliente(ActionEvent event) {
         if(validarFormulario()) {
             Cliente newCliente = crearCLiente();
@@ -149,6 +173,7 @@ public class GestionClienteController {
                 limpiarCamposCliente();
             }else {
                 mostrarMensaje("Notificación Cliente", "Cliente no creado", "El cliente ya existe", Alert.AlertType.ERROR);
+                limpiarCamposCliente();
             }
         }else{
             mostrarMensaje("Notificación Cliente", "Cliente no creado", "Datos ingresados son invalidos", Alert.AlertType.ERROR);

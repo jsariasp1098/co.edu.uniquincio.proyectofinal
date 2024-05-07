@@ -24,6 +24,9 @@ public class PrestamoObjeto {
     public boolean crearCliente(Cliente newCliente) {
         Cliente clienteEncontrado = obtenerCliente(newCliente.getNumeroIdentificacion());
         if(clienteEncontrado == null){
+            int IDcliente = listCliente.size()-1;
+            int idClienteNew = Integer.parseInt(listCliente.get(IDcliente).getIdCliente())+1;
+            newCliente.setIdCliente(Integer.toString(idClienteNew));
             getListCliente().add(newCliente);
             return true;
         }else{
@@ -51,7 +54,6 @@ public class PrestamoObjeto {
                 getListCliente().get(i).setApellidos(clienteModificar.getApellidos());
                 getListCliente().get(i).setDireccion(clienteModificar.getDireccion());
                 getListCliente().get(i).setEmail(clienteModificar.getEmail());
-
             }
         }
         return true;

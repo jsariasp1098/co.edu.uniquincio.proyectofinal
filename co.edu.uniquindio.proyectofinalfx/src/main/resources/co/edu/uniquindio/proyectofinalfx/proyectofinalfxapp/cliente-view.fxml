@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller.GestionClienteController">
+<AnchorPane prefHeight="580.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller.GestionClienteController">
    <children>
-      <TabPane layoutY="-6.0" prefHeight="546.0" prefWidth="804.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="-6.0" prefHeight="587.0" prefWidth="804.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Cliente">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="649.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="804.0">
                      <children>
                         <TextField fx:id="txtNombreCliente" layoutX="155.0" layoutY="49.0" prefHeight="24.0" prefWidth="214.0" />
                         <Label layoutX="317.0" prefHeight="29.0" prefWidth="171.0" text="Gestion de Clientes">
@@ -33,14 +33,14 @@
                         <TextField fx:id="txtEmailCliente" layoutX="578.0" layoutY="123.0" prefHeight="24.0" prefWidth="214.0" />
                         <Label layoutX="415.0" layoutY="53.0" text="Apellidos" />
                         <Label layoutX="15.0" layoutY="90.0" text="Tipo de Identifcacion" />
-                        <Label layoutX="415.0" layoutY="90.0" text="Numero deIdentifcacion" />
+                        <Label layoutX="415.0" layoutY="90.0" text="Numero de Identifcacion" />
                         <Label layoutX="15.0" layoutY="127.0" text="Direccion" />
-                        <Label layoutX="415.0" layoutY="119.0" text="Email" />
+                        <Label layoutX="415.0" layoutY="127.0" text="Email" />
                         <Separator layoutX="19.0" layoutY="214.0" prefHeight="0.0" prefWidth="675.0" />
-                        <Button fx:id="btnCrearClientes" layoutX="296.0" layoutY="167.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="32.0" prefWidth="69.0" text="Crear" AnchorPane.bottomAnchor="317.0" AnchorPane.leftAnchor="296.0" AnchorPane.rightAnchor="435.0" AnchorPane.topAnchor="167.0" />
-                        <Button fx:id="btnActualizarCliente" layoutX="426.0" layoutY="167.0" mnemonicParsing="false" onAction="#onActualizarCliente" text="Actualizar" AnchorPane.bottomAnchor="317.0" AnchorPane.leftAnchor="426.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="167.0" />
-                        <Button fx:id="btnEliminarCliente" layoutX="366.0" layoutY="462.0" mnemonicParsing="false" onAction="#onEliminarCliente" prefHeight="33.0" prefWidth="73.0" text="Borrar" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="366.0" AnchorPane.rightAnchor="365.0" AnchorPane.topAnchor="462.0" />
-                        <TableView fx:id="tbCliente" layoutX="12.0" layoutY="217.0" prefHeight="236.0" prefWidth="780.0">
+                        <Button fx:id="btnCrearClientes" layoutX="296.0" layoutY="167.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="34.0" prefWidth="73.0" text="Crear" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="296.0" AnchorPane.rightAnchor="435.0" AnchorPane.topAnchor="167.0" />
+                        <Button fx:id="btnActualizarCliente" layoutX="426.0" layoutY="167.0" mnemonicParsing="false" onAction="#onActualizarCliente" prefHeight="34.0" prefWidth="73.0" text="Actualizar" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="426.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="167.0" />
+                        <Button fx:id="btnEliminarCliente" layoutX="366.0" layoutY="518.0" mnemonicParsing="false" onAction="#onEliminarCliente" prefHeight="34.0" prefWidth="73.0" text="Borrar" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="366.0" AnchorPane.rightAnchor="365.0" AnchorPane.topAnchor="518.0" />
+                        <TableView fx:id="tbCliente" layoutX="12.0" layoutY="312.0" prefHeight="192.0" prefWidth="780.0">
                           <columns>
                             <TableColumn fx:id="tbIDCliente" prefWidth="70.0" text="ID Cliente" />
                             <TableColumn fx:id="tbNombreCliente" prefWidth="104.0" text="Nombres" />
@@ -51,6 +51,12 @@
                               <TableColumn fx:id="tbEmailCliente" prefWidth="134.0" text="Email" />
                           </columns>
                         </TableView>
+                        <Label fx:id="lbBuscar" layoutX="14.0" layoutY="235.0" text="Buscar" />
+                        <TextField fx:id="txtBuscarCliente" layoutX="65.0" layoutY="231.0" onKeyReleased="#filtrarNombreApellido" prefHeight="25.0" prefWidth="214.0" />
+                        <TextField fx:id="txtBuscar" layoutX="296.0" layoutY="231.0" onKeyReleased="#filtrarNombreApellido" prefHeight="25.0" prefWidth="214.0" />
+                        <TextField fx:id="txtBuscarCliente11" layoutX="535.0" layoutY="231.0" onKeyReleased="#filtrarNombreApellido" prefHeight="25.0" prefWidth="214.0" />
+                        <Button fx:id="btnCrearClientes1" layoutX="355.0" layoutY="263.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="33.0" prefWidth="95.0" text="Antigüedad" />
+                        <Button fx:id="btnCrearClientes11" layoutX="606.0" layoutY="262.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="34.0" prefWidth="73.0" text="Edad" />
                      </children>
                   </AnchorPane>
             </content>

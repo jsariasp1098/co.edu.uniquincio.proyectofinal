@@ -23,7 +23,7 @@ public class ModelFactory {
                 .idCliente("0")
                 .apellidos("Arias Parra")
                 .nombre("Juan Sebastian")
-                .tipoIdentificacion("Cedulda")
+                .tipoIdentificacion("Cedula")
                 .numeroIdentificacion("1098308516")
                 .direccion("Calle 8 # 7-22")
                 .email("jsariasp_1@uqvirtual.edu.co")
@@ -32,9 +32,9 @@ public class ModelFactory {
                 .idCliente("1")
                 .apellidos("Espinosa Monroy")
                 .nombre("Lina Maria")
-                .tipoIdentificacion("Cedulda")
+                .tipoIdentificacion("Cedula")
                 .numeroIdentificacion("24606390")
-                .direccion("Calle 8 # 7-22")
+                .direccion("Calle 6 # 15-20")
                 .email("lina.emiliana@gmail.com")
                 .Build();
         Cliente cliente3 = Cliente.Builder()
@@ -43,7 +43,7 @@ public class ModelFactory {
                 .nombre("Emiliana")
                 .tipoIdentificacion("Tarjeta Identidad")
                 .numeroIdentificacion("1098546178")
-                .direccion("Calle 8 # 7-22")
+                .direccion("Carrera 12 # 6-25")
                 .email("emiliana.ariae03@gmail.com")
                 .Build();
         prestamoObjeto.listCliente.add(cliente1);
