@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cbMostrarContrasena" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#onMostrarContrasena" prefHeight="313.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lbNombreSistema" layoutX="79.0" layoutY="14.0" prefHeight="29.0" prefWidth="131.0" text="Boutique TALÚ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbIniciarSesion" alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="55.0" prefHeight="29.0" prefWidth="167.0" text="Formulario Registro" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUsuarioIngreso" layoutX="50.0" layoutY="116.0" prefHeight="29.0" prefWidth="178.0" promptText="Correo Electronico" />
+      <Label fx:id="lbUsuarioIngreso" layoutX="50.0" layoutY="92.0" text="Correo Electronico" />
+      <TextField fx:id="txtContrasenaIngreso" layoutX="50.0" layoutY="174.0" prefHeight="29.0" prefWidth="178.0" promptText="Contraseña" />
+      <Label fx:id="txtContrasenaIngreso" layoutX="50.0" layoutY="151.0" text="Contraseña" />
+      <Button fx:id="btnIngresarSistema" layoutX="104.0" layoutY="239.0" mnemonicParsing="false" onAction="#onIngresarSistema" prefHeight="34.0" prefWidth="73.0" text="Ingresar" />
+      <CheckBox layoutX="51.0" layoutY="210.0" mnemonicParsing="false" text="Mostrar Contraseña">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>

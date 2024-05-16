@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller.LoginController">
+   <children>
+      <Label fx:id="lbNombreSistema" layoutX="79.0" layoutY="14.0" prefHeight="29.0" prefWidth="131.0" text="Boutique TALÚ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbIniciarSesion" alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="55.0" prefHeight="29.0" prefWidth="119.0" text="Iniciar Sesión" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUsuarioIngreso" layoutX="50.0" layoutY="116.0" prefHeight="29.0" prefWidth="178.0" promptText="Usuario" />
+      <Label fx:id="lbUsuarioIngreso" layoutX="50.0" layoutY="92.0" text="Usuario" />
+      <Label fx:id="lbContrasenaIngreso" layoutX="50.0" layoutY="151.0" text="Contraseña" />
+      <Button fx:id="btnIngresarSistema" layoutX="104.0" layoutY="239.0" mnemonicParsing="false" onAction="#onIngresarSistema" prefHeight="34.0" prefWidth="73.0" text="Ingresar" />
+      <Label fx:id="lbCrearUsuario" layoutX="104.0" layoutY="282.0" onDragDetected="#onCrearUsuario" text="Crear Usuario" />
+      <CheckBox fx:id="chbMostrarContrasena" layoutX="50.0" layoutY="219.0" mnemonicParsing="false" onAction="#onMostrarContrasena" text="Mostrar Contraseña">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </CheckBox>
+      <StackPane layoutX="51.0" layoutY="168.0" prefHeight="50.0" prefWidth="178.0">
+         <children>
+            <TextField fx:id="txtContrasenaIngreso" prefHeight="29.0" prefWidth="178.0" promptText="Contraseña" />
+            <PasswordField fx:id="pfContrasena" onKeyTyped="#passwordFieldMostrar" prefHeight="29.0" prefWidth="178.0" promptText="Contraseña" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
