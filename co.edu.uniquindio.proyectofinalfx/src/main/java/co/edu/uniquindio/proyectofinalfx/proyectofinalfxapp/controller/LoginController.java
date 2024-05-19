@@ -1,19 +1,17 @@
 package co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller;
+import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model.InterfaceView.InterfaceFactory;
+import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model.InterfaceView.InterfaceView;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.HelloApplication;
-import javafx.scene.Node;
-import javafx.stage.Stage;
+import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.factory.ModelFactory;
 
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -21,9 +19,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class LoginController {
+    ModelFactory modelFactory;
+
     @FXML
     private ResourceBundle resources;
 
@@ -61,6 +61,11 @@ public class LoginController {
     private TextField txtUsuarioIngreso;
 
     @FXML
+    public void initialize() {
+        txtContrasenaIngreso.setVisible(false);
+        modelFactory = ModelFactory.getInstancia();
+    }
+    @FXML
     void onCrearUsuario(MouseEvent event) {
 
     }
@@ -68,16 +73,36 @@ public class LoginController {
     @FXML
     void onIngresarSistema(ActionEvent event) throws IOException {
 
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+        String usuario = txtUsuarioIngreso.getText();
+        String contrasena = pfContrasena.getText();
 
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("cliente-view.fxml"));
-        Scene scene = new Scene(loader.load());
-        Stage stage1 = new Stage();
-        stage1.setTitle("Tienda de Ropa");
-        stage1.setScene(scene);
-        stage1.show();
+        if((usuario.isEmpty()) && (contrasena.isEmpty())) {
+
+        }else{
+            String tipo = modelFactory.buscarUsuario(usuario,contrasena);
+            if(tipo.isEmpty()) {
+
+            }else{
+                InterfaceView llamarInterface = InterfaceFactory.tipoInterface(tipo);
+                Node source = (Node) event.getSource();
+                Stage stage = (Stage) source.getScene().getWindow();
+                stage.close();
+                llamarInterface.llamarInterfaca();
+            }
+        }
+
+
+
+//        Node source = (Node) event.getSource();
+//        Stage stage = (Stage) source.getScene().getWindow();
+//
+//        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("cliente-view.fxml"));
+//        Scene scene = new Scene(loader.load());
+//        Stage stage1 = new Stage();
+//        stage1.setTitle("Tienda de Ropa");
+//        stage1.setScene(scene);
+//        stage.close();
+//        stage1.show();
 
 
 
@@ -98,10 +123,5 @@ public class LoginController {
     @FXML
     void passwordFieldMostrar(KeyEvent event) {
 
-    }
-
-    @FXML
-    public void initialize() {
-        txtContrasenaIngreso.setVisible(false);
     }
 }

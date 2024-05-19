@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="580.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller.GestionAdministradorController">
+    <children>
+        <TabPane layoutY="-6.0" prefHeight="587.0" prefWidth="804.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Empleados">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="804.0">
+                            <children>
+                                <TextField fx:id="txtNombreEmpleado" layoutX="155.0" layoutY="49.0" prefHeight="24.0" prefWidth="214.0" />
+                                <Label layoutX="307.0" prefHeight="29.0" prefWidth="192.0" text="Gestion de Empleados">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="77.0" layoutY="53.0" text="Nombres" />
+                                <TextField fx:id="txtTipoIdentificacionEmpleado" layoutX="155.0" layoutY="86.0" prefHeight="24.0" prefWidth="214.0" />
+                                <TextField fx:id="txtDireccionEmpleado" layoutX="155.0" layoutY="123.0" prefHeight="25.0" prefWidth="214.0" />
+                                <TextField fx:id="txtApellidoEmpleado" layoutX="578.0" layoutY="49.0" prefHeight="24.0" prefWidth="214.0" />
+                                <TextField fx:id="txtNumeroIdentificacionEmpleado" layoutX="578.0" layoutY="86.0" prefHeight="24.0" prefWidth="214.0" />
+                                <TextField fx:id="txtEmailEmpleado" layoutX="578.0" layoutY="123.0" prefHeight="24.0" prefWidth="214.0" />
+                                <Label layoutX="415.0" layoutY="53.0" text="Apellidos" />
+                                <Label layoutX="15.0" layoutY="90.0" text="Tipo de Identifcacion" />
+                                <Label layoutX="415.0" layoutY="90.0" text="Numero de Identifcacion" />
+                                <Label layoutX="71.0" layoutY="127.0" text="Direccion" />
+                                <Label layoutX="415.0" layoutY="127.0" text="Email" />
+                                <Separator layoutX="30.0" layoutY="231.0" prefHeight="5.0" prefWidth="744.0" />
+                                <Button fx:id="btnCrearEmpleado" layoutX="366.0" layoutY="173.0" mnemonicParsing="false" onAction="#onCrearEmpleado" prefHeight="30.0" prefWidth="85.0" text="Crear" AnchorPane.bottomAnchor="355.0" AnchorPane.leftAnchor="366.0" AnchorPane.rightAnchor="353.0" AnchorPane.topAnchor="173.0" />
+                                <Button fx:id="btnActualizarEmpleado" layoutX="511.0" layoutY="173.0" mnemonicParsing="false" onAction="#onActualizarEmpleado" prefHeight="29.0" prefWidth="85.0" text="Actualizar" AnchorPane.bottomAnchor="356.0" AnchorPane.leftAnchor="511.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="173.0" />
+                                <Button fx:id="btnEliminarEmpleado" layoutX="360.0" layoutY="514.0" mnemonicParsing="false" onAction="#onEliminarEmpleado" prefHeight="30.0" prefWidth="85.0" text="Borrar" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="359.0" AnchorPane.topAnchor="514.0" />
+                                <TableView fx:id="tbEmpleados" layoutX="7.0" layoutY="251.0" prefHeight="254.0" prefWidth="790.0">
+                                    <columns>
+                                        <TableColumn fx:id="tbIDEmpleado" prefWidth="82.0" text="ID Empleado" />
+                                        <TableColumn fx:id="tbNombreEmpleado" prefWidth="101.0" text="Nombres" />
+                                        <TableColumn fx:id="tbApellidoEmpleado" prefWidth="90.0" text="Apellidos" />
+                                        <TableColumn fx:id="tbTipoIdentificacionEmpleado" prefWidth="110.0" text="Tipo Identificacion" />
+                                        <TableColumn fx:id="tbIdentificacionEmpleado" prefWidth="110.0" text="No. Identificacion" />
+                                        <TableColumn fx:id="tbRolEmpleado" prefWidth="78.0" text="Rol" />
+                                        <TableColumn fx:id="tbDireccionEmpleado" minWidth="0.0" prefWidth="84.0" text="Direccion" />
+                                        <TableColumn fx:id="tbEmailEmpleado" prefWidth="54.0" text="Email" />
+                              <TableColumn fx:id="tbPassEmpleado" prefWidth="68.0" text="Contraseña" />
+                                    </columns>
+                                </TableView>
+                                <ComboBox fx:id="cbRolEmpleado" layoutX="155.0" layoutY="174.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="150.0" />
+                        <Label layoutX="101.0" layoutY="179.0" text="Rol" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Venta">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="804.0">
+                            <children>
+                                <TextField fx:id="txtNombreVendedor" layoutX="89.0" layoutY="49.0" prefHeight="23.0" prefWidth="150.0" />
+                                <Label layoutX="329.0" prefHeight="29.0" prefWidth="148.0" text="Gestion de Venta">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbVendedor" layoutX="14.0" layoutY="53.0" text="Vendedor" />
+                                <TextField fx:id="txtIdClienteVenta" layoutX="90.0" layoutY="99.0" prefHeight="21.0" prefWidth="148.0" />
+                                <TextField fx:id="txtFechaVenta" layoutX="369.0" layoutY="49.0" prefHeight="20.0" prefWidth="99.0" />
+                                <TextField fx:id="txtDescripcionProductoVenta" layoutX="317.0" layoutY="155.0" prefHeight="20.0" prefWidth="150.0" />
+                                <TextField fx:id="txtDireccionCliienteVenta" layoutX="540.0" layoutY="99.0" prefHeight="19.0" prefWidth="150.0" />
+                                <Label fx:id="lbFechaVenta" layoutX="317.0" layoutY="53.0" text="Fecha" />
+                                <Label fx:id="lbNombreClienteVenta" layoutX="244.0" layoutY="103.0" text="Cliente" />
+                                <Label fx:id="lbIdClienteVenta" layoutX="12.0" layoutY="103.0" text="ID Cliente" />
+                                <Separator layoutX="58.0" layoutY="138.0" prefHeight="0.0" prefWidth="675.0" />
+                                <TableView fx:id="tbVenta" layoutX="12.0" layoutY="237.0" prefHeight="302.0" prefWidth="555.0">
+                                    <columns>
+                                        <TableColumn fx:id="tbcIdProductoVenta" prefWidth="71.0" text="Codigo" />
+                                        <TableColumn fx:id="tbcDescripcionVenta" prefWidth="156.0" text="Decripcion Producto" />
+                                        <TableColumn fx:id="tbcCantidadVenta" prefWidth="85.0" text="Cantidad" />
+                                        <TableColumn fx:id="tbcValorUnitarioVenta" prefWidth="84.0" text="Valor Unitario" />
+                                        <TableColumn fx:id="tbcPorcentajeDescuentoVenta" prefWidth="76.0" text="Descuento" />
+                                        <TableColumn fx:id="tbcValorTotalVenta" prefWidth="86.0" text="Valor Total" />
+                                    </columns>
+                                </TableView>
+                                <TextField fx:id="txtNombreClienteVenta" layoutX="317.0" layoutY="99.0" prefHeight="18.0" prefWidth="150.0" />
+                                <Button fx:id="btnBuscarClienteVenta" layoutX="699.0" layoutY="99.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="21.0" prefWidth="94.0" text="Buscar Cliente" />
+                                <Separator layoutX="58.0" layoutY="85.0" prefHeight="0.0" prefWidth="675.0" />
+                                <Label fx:id="lbDireccionClienteVenta" layoutX="477.0" layoutY="103.0" text="Direccion" />
+                                <Label fx:id="lbFechaVenta1" layoutX="537.0" layoutY="53.0" text="Numero Venta" />
+                                <TextField fx:id="txtNumeroVenta" layoutX="644.0" layoutY="49.0" prefHeight="20.0" prefWidth="110.0" />
+                                <Label fx:id="lbIdProductoVenta" layoutX="9.0" layoutY="159.0" text="ID producto" />
+                                <TextField fx:id="txtIdProducttoVenta" layoutX="90.0" layoutY="155.0" prefHeight="21.0" prefWidth="148.0" />
+                                <Label fx:id="lbDescripcionProductoVenta" layoutX="244.0" layoutY="159.0" text="Descripcion" />
+                                <Label fx:id="lbCantidadProductoVenta" layoutX="477.0" layoutY="159.0" text="Cantidad" />
+                                <TextField fx:id="txtCantidadProductoVenta" layoutX="540.0" layoutY="155.0" prefHeight="25.0" prefWidth="57.0" />
+                                <Label fx:id="lbDescuentoProductoVenta" layoutX="620.0" layoutY="159.0" text="Descuento" />
+                                <TextField fx:id="txtDescuentoProductoVenta" layoutX="690.0" layoutY="155.0" prefHeight="25.0" prefWidth="57.0" />
+                                <Button fx:id="btnBuscarProductoVenta" layoutX="217.0" layoutY="198.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Buscar Producto" />
+                                <Button fx:id="btnAgregarProductoVenta" layoutX="361.0" layoutY="198.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Agregar Producto" />
+                                <Button fx:id="btnRealizarVenta" layoutX="628.0" layoutY="423.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Realizar Venta" />
+                                <Button fx:id="btnCancelarVenta" layoutX="628.0" layoutY="465.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Cancelar Venta" />
+                                <Button fx:id="btnVentaNueva" layoutX="628.0" layoutY="504.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Nueva Venta" />
+                                <Label fx:id="lbValorTotalVenta" layoutX="585.0" layoutY="259.0" prefHeight="21.0" prefWidth="60.0" text="Valor Total" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="txtValorTotalVenta" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="259.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbValorDescuentoVenta" layoutX="585.0" layoutY="293.0" text="Valor Descuento" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="txtValorDescuentoVenta" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="290.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbValorPagarVenta" layoutX="585.0" layoutY="321.0" prefHeight="21.0" prefWidth="81.0" text="Valor a Pagar" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="txtValorPagarVenta" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="321.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbEfectivoRecibido" layoutX="586.0" layoutY="354.0" prefHeight="18.0" prefWidth="58.0" text="Efetivo" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtEfectivoRecibidoVenta" layoutX="689.0" layoutY="350.0" prefHeight="18.0" prefWidth="96.0" />
+                                <Label fx:id="lbCambioVenta" layoutX="585.0" layoutY="388.0" prefHeight="21.0" prefWidth="60.0" text="Cambio" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="txtCambioVenta" alignment="CENTER" contentDisplay="CENTER" layoutX="686.0" layoutY="388.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="btnBuscarPedidoEntregado" layoutX="501.0" layoutY="198.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="124.0" text="Pedidos Entregado" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Cliente">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="804.0">
+                            <children>
+                                <TextField fx:id="txtNombreCliente" layoutX="155.0" layoutY="49.0" prefHeight="24.0" prefWidth="214.0" />
+                                <Label layoutX="317.0" prefHeight="29.0" prefWidth="171.0" text="Gestion de Clientes">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="14.0" layoutY="53.0" text="Nombres" />
+                                <TextField fx:id="txtTipoIdentificacionCliente" layoutX="155.0" layoutY="86.0" prefHeight="24.0" prefWidth="214.0" />
+                                <TextField fx:id="txtDireccionCliente" layoutX="155.0" layoutY="123.0" prefHeight="25.0" prefWidth="214.0" />
+                                <TextField fx:id="txtApellidoCliente" layoutX="578.0" layoutY="49.0" prefHeight="24.0" prefWidth="214.0" />
+                                <TextField fx:id="txtNumeroIdentificacionCliente" layoutX="578.0" layoutY="86.0" prefHeight="24.0" prefWidth="214.0" />
+                                <TextField fx:id="txtEmailCliente" layoutX="578.0" layoutY="123.0" prefHeight="24.0" prefWidth="214.0" />
+                                <Label layoutX="415.0" layoutY="53.0" text="Apellidos" />
+                                <Label layoutX="15.0" layoutY="90.0" text="Tipo de Identifcacion" />
+                                <Label layoutX="415.0" layoutY="90.0" text="Numero de Identifcacion" />
+                                <Label layoutX="15.0" layoutY="127.0" text="Direccion" />
+                                <Label layoutX="415.0" layoutY="127.0" text="Email" />
+                                <Separator layoutX="19.0" layoutY="214.0" prefHeight="0.0" prefWidth="675.0" />
+                                <Button fx:id="btnCrearClientes" layoutX="296.0" layoutY="167.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="34.0" prefWidth="73.0" text="Crear" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="296.0" AnchorPane.rightAnchor="435.0" AnchorPane.topAnchor="167.0" />
+                                <Button fx:id="btnActualizarCliente" layoutX="426.0" layoutY="167.0" mnemonicParsing="false" onAction="#onActualizarCliente" prefHeight="34.0" prefWidth="73.0" text="Actualizar" AnchorPane.bottomAnchor="357.0" AnchorPane.leftAnchor="426.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="167.0" />
+                                <Button fx:id="btnEliminarCliente" layoutX="366.0" layoutY="518.0" mnemonicParsing="false" onAction="#onEliminarCliente" prefHeight="34.0" prefWidth="73.0" text="Borrar" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="366.0" AnchorPane.rightAnchor="365.0" AnchorPane.topAnchor="518.0" />
+                                <TableView fx:id="tbCliente" layoutX="12.0" layoutY="224.0" prefHeight="280.0" prefWidth="780.0">
+                                    <columns>
+                                        <TableColumn fx:id="tbcIDCliente" prefWidth="70.0" text="ID Cliente" />
+                                        <TableColumn fx:id="tbcNombreCliente" prefWidth="91.0" text="Nombres" />
+                                        <TableColumn fx:id="tbcApellidoCliente" prefWidth="99.0" text="Apellidos" />
+                                        <TableColumn fx:id="tbcTipoIdentificacionCliente" prefWidth="116.0" text="Tipo Identificacion" />
+                                        <TableColumn fx:id="tbcIdentificacionCliente" prefWidth="128.0" text="No. Identificacion" />
+                                        <TableColumn fx:id="tbcDireccionCliente" prefWidth="84.0" text="Direccion" />
+                                        <TableColumn fx:id="tbcEmailCliente" prefWidth="109.0" text="Email" />
+                              <TableColumn fx:id="tbcPassCliente" prefWidth="81.0" text="Contraseña" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Compras">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="804.0">
+                            <children>
+                                <TextField fx:id="txtIDProveedorCompra" layoutX="101.0" layoutY="49.0" prefHeight="25.0" prefWidth="100.0" />
+                                <Label layoutX="317.0" prefHeight="29.0" prefWidth="180.0" text="Gestion de Compras">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbProveedor" layoutX="14.0" layoutY="53.0" text="ID Proveedor" />
+                                <TextField fx:id="txtIDProductoCompra" layoutX="90.0" layoutY="99.0" prefHeight="21.0" prefWidth="148.0" />
+                                <TextField fx:id="txtNombreProveedorCompra" layoutX="275.0" layoutY="49.0" prefHeight="25.0" prefWidth="139.0" />
+                                <TextField fx:id="txtPrecioCompraProducto" layoutX="345.0" layoutY="143.0" prefHeight="25.0" prefWidth="85.0" />
+                                <Label fx:id="lbNombreProveedorCompra" layoutX="222.0" layoutY="53.0" text="Nombre" />
+                                <Label fx:id="lbNombreProductoCompra" layoutX="244.0" layoutY="103.0" text="Nombre" />
+                                <Label fx:id="lbIDProductoCompra" layoutX="12.0" layoutY="103.0" text="ID Producto" />
+                                <TableView fx:id="tbCompra" layoutX="12.0" layoutY="237.0" prefHeight="302.0" prefWidth="555.0">
+                                    <columns>
+                                        <TableColumn fx:id="tbcIdProductoCompra" prefWidth="71.0" text="Codigo" />
+                                        <TableColumn fx:id="tbcDescripcionCompra" prefWidth="156.0" text="Decripcion Producto" />
+                                        <TableColumn fx:id="tbcCantidadCompra" prefWidth="85.0" text="Cantidad" />
+                                        <TableColumn fx:id="tbcValorUnitarioCompra" prefWidth="84.0" text="Valor Unitario" />
+                                        <TableColumn fx:id="tbcPorcentajeDescuentoCompra" prefWidth="76.0" text="Descuento" />
+                                        <TableColumn fx:id="tbcValorTotalCompra" prefWidth="86.0" text="Valor Total" />
+                                    </columns>
+                                </TableView>
+                                <TextField fx:id="txtNombreProductoCompra" layoutX="306.0" layoutY="99.0" prefHeight="18.0" prefWidth="150.0" />
+                                <Button fx:id="btnBuscarProductoCompra" layoutX="470.0" layoutY="99.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="104.0" text="Buscar Producto" />
+                                <Label fx:id="lbTipoProductoCompra" layoutX="588.0" layoutY="104.0" text="Tipo Producto" />
+                                <Label fx:id="lbDireccionProveedorCompra" layoutX="420.0" layoutY="53.0" prefHeight="17.0" prefWidth="57.0" text="Direccion" />
+                                <Label fx:id="lbDescripcionProductoCompra" layoutX="13.0" layoutY="147.0" text="Descripcion" />
+                                <TextField fx:id="txtDescripcionProductoCompra" layoutX="93.0" layoutY="143.0" prefHeight="24.0" prefWidth="143.0" />
+                                <Label fx:id="lbPrecioCompraProducto" layoutX="249.0" layoutY="147.0" text="Precio Compra" />
+                                <Label fx:id="lbPrecioVentaProducto" layoutX="444.0" layoutY="147.0" text="Precio Venta" />
+                                <TextField fx:id="txtPrecioVentaProductoCompra" layoutX="518.0" layoutY="143.0" prefHeight="25.0" prefWidth="85.0" />
+                                <Button fx:id="btnAgregarProductoCompra" layoutX="349.0" layoutY="192.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Agregar Producto" />
+                                <Button fx:id="btnRealizarCompra" layoutX="628.0" layoutY="376.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Realizar Compra" />
+                                <Button fx:id="btnCancelarCompra" layoutX="628.0" layoutY="421.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Cancelar Compra" />
+                                <Button fx:id="btnCompraNueva" layoutX="628.0" layoutY="469.0" mnemonicParsing="false" onAction="#onCrearCliente" prefHeight="25.0" prefWidth="116.0" text="Nueva Compra" />
+                                <Label fx:id="lbValorTotalCompra" layoutX="585.0" layoutY="259.0" prefHeight="21.0" prefWidth="60.0" text="Valor Total" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="txtValorTotalCompra" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="259.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbValorDescuentoCompra" layoutX="585.0" layoutY="293.0" text="Valor Descuento" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="txtValorDescuentoCompra" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="290.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lbValorPagarCompra" layoutX="585.0" layoutY="321.0" prefHeight="21.0" prefWidth="81.0" text="Valor a Pagar" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="txtValorPagarCompra" alignment="CENTER" contentDisplay="CENTER" layoutX="690.0" layoutY="321.0" prefHeight="21.0" prefWidth="94.0" text="xxxxxxxxx" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial" size="18.0" />
+                                    </font>
+                                </Label>
+                                <SplitMenuButton fx:id="slipTipoProductoCompra" layoutX="673.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                                        <MenuItem mnemonicParsing="false" text="Action 2" />
+                                    </items>
+                                </SplitMenuButton>
+                                <Separator layoutX="65.0" layoutY="86.0" prefHeight="0.0" prefWidth="675.0" />
+                                <TextField fx:id="txtDireccionProveedorCompra" layoutX="477.0" layoutY="49.0" prefHeight="25.0" prefWidth="139.0" />
+                                <Label fx:id="lbTelefonoProveedorCompra" layoutX="630.0" layoutY="53.0" prefHeight="17.0" prefWidth="57.0" text="Teléfono" />
+                                <TextField fx:id="txtFechaCompra" layoutX="687.0" layoutY="49.0" prefHeight="25.0" prefWidth="93.0" />
+                                <Label fx:id="lbCantidadProductoCompra" layoutX="616.0" layoutY="147.0" text="Cantidad" />
+                                <Spinner fx:id="txtCantidadProductoCompra" layoutX="674.0" layoutY="143.0" prefHeight="25.0" prefWidth="116.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

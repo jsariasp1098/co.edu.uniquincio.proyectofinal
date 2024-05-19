@@ -5,18 +5,17 @@ import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model.builder.Client
 import java.util.Date;
 
 public class Cliente extends Persona{
-    private String idCliente;
-    private Date fechaNacimiento, fechaCreacion;
+    private String idCliente, pass;
+
 
     public Cliente() {
     }
 
     public Cliente(String tipoIdentificacion, String numeroIdentificacion, String nombre, String apellidos,
-                   String direccion, String email, String idCliente, Date fechaNacimiento, Date fechaCreacion) {
+                   String direccion, String email, String idCliente, String pass) {
         super(tipoIdentificacion, numeroIdentificacion, nombre, apellidos, direccion, email);
         this.idCliente = idCliente;
-        this.fechaNacimiento = fechaNacimiento;
-        this.fechaCreacion = fechaCreacion;
+        this.pass = pass;
     }
 
     public String getIdCliente() {
@@ -28,20 +27,12 @@ public class Cliente extends Persona{
         this.idCliente = idCliente;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getPass() {
+        return pass;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public Date getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public static ClienteBuilder Builder(){

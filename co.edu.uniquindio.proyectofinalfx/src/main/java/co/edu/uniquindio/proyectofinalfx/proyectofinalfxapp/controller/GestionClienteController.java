@@ -100,6 +100,7 @@ public class GestionClienteController {
     }
 
     private void ObtenerCliente() {
+
         listCliente.addAll(modelFactory.obtenerCliente());
     }
 
@@ -140,7 +141,7 @@ public class GestionClienteController {
         }
     }
 
-        private void initview (){
+    private void initview (){
         initDataBindind();
         ObtenerCliente();
         tbCliente.getItems().clear();
