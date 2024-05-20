@@ -87,26 +87,9 @@ public class LoginController {
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
                 stage.close();
-                llamarInterface.llamarInterfaca();
+                llamarInterface.llamarInterface();
             }
         }
-
-
-
-//        Node source = (Node) event.getSource();
-//        Stage stage = (Stage) source.getScene().getWindow();
-//
-//        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("cliente-view.fxml"));
-//        Scene scene = new Scene(loader.load());
-//        Stage stage1 = new Stage();
-//        stage1.setTitle("Tienda de Ropa");
-//        stage1.setScene(scene);
-//        stage.close();
-//        stage1.show();
-
-
-
-
     }
 
     @FXML

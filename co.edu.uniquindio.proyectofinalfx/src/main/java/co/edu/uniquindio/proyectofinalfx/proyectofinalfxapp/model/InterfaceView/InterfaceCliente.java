@@ -8,9 +8,9 @@ import java.io.IOException;
 
 public class InterfaceCliente implements InterfaceView {
     @Override
-    public void llamarInterfaca() throws IOException {
+    public void llamarInterface() throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("cliente-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("pedidos-view.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage1 = new Stage();
         stage1.setTitle("Tienda de Ropa -Cliente");

@@ -1,246 +1,116 @@
 package co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.controller;
 
-import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.factory.ModelFactory;
-import co.edu.uniquindio.proyectofinalfx.proyectofinalfxapp.model.Cliente;
-import javafx.beans.Observable;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 
 public class GestionClienteController {
 
-    ModelFactory modelFactory;
-
-    ObservableList<Cliente> listCliente = FXCollections.observableArrayList();
-    ObservableList<Cliente> listClienteFiltro = FXCollections.observableArrayList();
-    Cliente clienteSeleccionado;
+    @FXML
+    private Button btnAgregarProductoVenta;
 
     @FXML
-    private Button btnActualizarCliente;
+    private Button btnBuscarProductoPedido;
 
     @FXML
-    private Button btnCrearClientes;
+    private Button btnCancelarPedido;
 
     @FXML
-    private Button btnEliminarCliente;
+    private Button btnPedidoNueva;
 
     @FXML
-    private Label lbBuscar;
+    private Button btnRealizarPedido;
 
     @FXML
-    private TableColumn<Cliente, String> tbApellidoCliente;
+    private Label lbCantidadProductoVenta;
 
     @FXML
-    private TableView<Cliente> tbCliente;
+    private Label lbDescripcionProductoVenta;
 
     @FXML
-    private TableColumn<Cliente, String> tbDireccionCliente;
+    private Label lbIdClienteVenta;
 
     @FXML
-    private TableColumn<Cliente, String> tbEmailCliente;
+    private Label lbIdProductoVenta;
 
     @FXML
-    private TableColumn<Cliente, String> tbIDCliente;
+    private Label lbNombreClienteVenta;
 
     @FXML
-    private TableColumn<Cliente, String> tbIdentificacionCliente;
+    private Label lbNombreClienteVenta1;
 
     @FXML
-    private TableColumn<Cliente, String> tbNombreCliente;
+    private Label lbValorPagarVenta;
 
     @FXML
-    private TableColumn<Cliente, String> tbTipoIdentificacionCliente;
+    private Spinner<?> spCantidadPedido;
 
     @FXML
-    private TextField txtApellidoCliente;
+    private TableView<?> tbPedido;
 
     @FXML
-    private TextField txtBuscarCliente;
+    private TableColumn<?, ?> tbcCantidadPedido;
 
     @FXML
-    private TextField txtDireccionCliente;
+    private TableColumn<?, ?> tbcDescripcionPedido;
 
     @FXML
-    private TextField txtEmailCliente;
+    private TableColumn<?, ?> tbcIdProductoPedido;
 
     @FXML
-    private TextField txtNombreCliente;
+    private TableColumn<?, ?> tbcValorTotalPedido;
 
     @FXML
-    private TextField txtNumeroIdentificacionCliente;
+    private TableColumn<?, ?> tbcValorUnitarioPedido;
 
     @FXML
-    private TextField txtTipoIdentificacionCliente;
+    private TextField txtDescripcionProductoPedido;
+
     @FXML
-    void initialize() {
-        modelFactory = ModelFactory.getInstancia();
-        initview();
-    }
-    private void listenerSelection() {
-        tbCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            clienteSeleccionado = newSelection;
-            mostrarInformacionPropietario(clienteSeleccionado);
-        });
-    }
+    private TextField txtFechaPedido;
 
-    private void mostrarInformacionPropietario(Cliente clienteSeleccionado) {
-        if(clienteSeleccionado != null){
-            txtNombreCliente.setText(clienteSeleccionado.getNombre());
-            txtApellidoCliente.setText(clienteSeleccionado.getApellidos());
-            txtTipoIdentificacionCliente.setText(clienteSeleccionado.getTipoIdentificacion());
-            txtNumeroIdentificacionCliente.setText(clienteSeleccionado.getNumeroIdentificacion());
-            txtDireccionCliente.setText(clienteSeleccionado.getDireccion());
-            txtEmailCliente.setText(clienteSeleccionado.getEmail());
-        }
-    }
+    @FXML
+    private TextField txtIdClientePedido;
 
-    private void ObtenerCliente() {
+    @FXML
+    private TextField txtIdProducttoPedido;
 
-        listCliente.addAll(modelFactory.obtenerCliente());
-    }
+    @FXML
+    private TextField txtNombrePedido;
 
-    private void initDataBindind() {
-        tbIDCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdCliente()));
-        tbApellidoCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getApellidos()));
-        tbNombreCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
-        tbTipoIdentificacionCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTipoIdentificacion()));
-        tbIdentificacionCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNumeroIdentificacion()));
-        tbDireccionCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDireccion()));
-        tbEmailCliente.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmail()));
+    @FXML
+    private Label txtValorPagarPedido;
+
+    @FXML
+    void onAgregarProductoPedido(ActionEvent event) {
+
     }
 
     @FXML
-    void onActualizarCliente(ActionEvent event) {
-        if (clienteSeleccionado == null) {
-            mostrarMensaje("Notificación Cliente", "Cliente no modificado",
-                    "No hay cliente seleccionado", Alert.AlertType.ERROR);
-        }else{
-            Cliente clienteModificar = crearCLiente();
-            if(clienteModificar.getNombre().equals(clienteSeleccionado.getNombre())
-                    &&clienteModificar.getApellidos().equals(clienteSeleccionado.getApellidos())
-                    &&clienteModificar.getTipoIdentificacion().equals(clienteSeleccionado.getTipoIdentificacion())
-                    &&clienteModificar.getNumeroIdentificacion().equals(clienteSeleccionado.getNumeroIdentificacion())
-                    &&clienteModificar.getDireccion().equals(clienteSeleccionado.getDireccion())
-                    &&clienteModificar.getEmail().equals(clienteSeleccionado.getEmail())) {
-                mostrarMensaje("Notificación Cliente", "Cliente no Modificado",
-                        "No hay campos diferentes para modificar", Alert.AlertType.ERROR);
-            }else {
-                modelFactory.modificarCliente(clienteSeleccionado.getNumeroIdentificacion(), clienteModificar);
-                tbCliente.getItems().clear();
-                listCliente.addAll(modelFactory.obtenerCliente());
-                tbCliente.setItems(listCliente);
-                mostrarMensaje("Notificación Cliente", "Cliente Modificado",
-                        "Cliente modificado satisfactoriamente", Alert.AlertType.INFORMATION);
-                limpiarCamposCliente();
-            }
-        }
-    }
+    void onBuscarProductoPedido(ActionEvent event) {
 
-    private void initview (){
-        initDataBindind();
-        ObtenerCliente();
-        tbCliente.getItems().clear();
-        tbCliente.setItems(listCliente);
-        listenerSelection();
-    }
-    @FXML
-    void filtrarNombreApellido(KeyEvent event) {
-        String filtre = txtBuscarCliente.getText();
-        if(filtre.isEmpty()){
-            tbCliente.setItems(listCliente);
-        }else{
-            listClienteFiltro.clear();
-            for (Cliente cliente1: listCliente) {
-                if (cliente1.getNombre().toLowerCase().contains(filtre.toLowerCase())||
-                        cliente1.getNumeroIdentificacion().toLowerCase().contains(filtre.toLowerCase())){
-                    listClienteFiltro.add(cliente1);
-                }
-            }
-            tbCliente.setItems(listClienteFiltro);
-        }
-    }
-    @FXML
-    void onCrearCliente(ActionEvent event) {
-        if(validarFormulario()) {
-            Cliente newCliente = crearCLiente();
-            if(modelFactory.crearCliente(newCliente)) {
-                listCliente.add(newCliente);
-                mostrarMensaje("Notificación Cliente", "Cliente creado", "El Cliente se ha creado con éxito", Alert.AlertType.INFORMATION);
-                limpiarCamposCliente();
-            }else {
-                mostrarMensaje("Notificación Cliente", "Cliente no creado", "El cliente ya existe", Alert.AlertType.ERROR);
-                limpiarCamposCliente();
-            }
-        }else{
-            mostrarMensaje("Notificación Cliente", "Cliente no creado", "Datos ingresados son invalidos", Alert.AlertType.ERROR);
-        }
-    }
-
-    private void limpiarCamposCliente() {
-        txtNombreCliente.setText("");
-        txtApellidoCliente.setText("");
-        txtTipoIdentificacionCliente.setText("");
-        txtNumeroIdentificacionCliente.setText("");
-        txtDireccionCliente.setText("");
-        txtEmailCliente.setText("");
-    }
-
-    private void mostrarMensaje(String titulo, String header, String contenido, Alert.AlertType alertType) {
-        Alert aler = new Alert(alertType);
-        aler.setTitle(titulo);
-        aler.setHeaderText(header);
-        aler.setContentText(contenido);
-        aler.showAndWait();
-    }
-
-    private Cliente crearCLiente() {
-        return Cliente.Builder()
-                .apellidos(txtApellidoCliente.getText())
-                .nombre(txtNombreCliente.getText())
-                .tipoIdentificacion(txtTipoIdentificacionCliente.getText())
-                .numeroIdentificacion(txtNumeroIdentificacionCliente.getText())
-                .direccion(txtDireccionCliente.getText())
-                .email(txtEmailCliente.getText())
-                .Build();
-    }
-
-    private boolean validarFormulario() {
-        if (txtNombreCliente.getText().isEmpty()
-                || txtApellidoCliente.getText().isEmpty()
-                || txtTipoIdentificacionCliente.getText().isEmpty()
-                || txtNumeroIdentificacionCliente.getText().isEmpty()
-                || txtDireccionCliente.getText().isEmpty()
-                || txtEmailCliente.getText().isEmpty())
-                {
-            return false;
-        }
-        return true;
     }
 
     @FXML
-    void onEliminarCliente(ActionEvent event) {
-        if(clienteSeleccionado == null){
-            mostrarMensaje("Notificación Cliente", "Cliente no Eliminado",
-                    "No hay cliente seleccionado", Alert.AlertType.ERROR);
-        }else{
-            elimarCliente(clienteSeleccionado);
-        }
+    void onCancelarPedido(ActionEvent event) {
+
     }
 
-    private void elimarCliente(Cliente clienteSeleccionado) {
-        boolean eliminar = modelFactory.eliminarCliente(clienteSeleccionado);
-        if(eliminar == true) {
-            listCliente.remove(clienteSeleccionado);
-            tbCliente.setItems(listCliente);
-            mostrarMensaje("Notificación Cliente", "Cliente Eliminado",
-                    "EL cliente fue eliminado", Alert.AlertType.INFORMATION);
-            limpiarCamposCliente();
-        }
+    @FXML
+    void onNuevoPedido(ActionEvent event) {
+
     }
+
+    @FXML
+    void onRealizarPedido(ActionEvent event) {
+
+    }
+
 
 }

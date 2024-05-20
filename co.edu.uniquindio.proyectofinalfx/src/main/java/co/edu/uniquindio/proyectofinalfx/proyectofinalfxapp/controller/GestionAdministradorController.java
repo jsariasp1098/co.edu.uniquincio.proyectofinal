@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 
 public class GestionAdministradorController {
     ModelFactory modelFactory;
@@ -696,6 +697,21 @@ public class GestionAdministradorController {
             limpiarCamposEmpleado();
         }
     }
-
+//    @FXML
+//    void filtrarNombreApellido(KeyEvent event) {
+//        String filtre = txtBuscarCliente.getText();
+//        if(filtre.isEmpty()){
+//            tbCliente.setItems(listCliente);
+//        }else{
+//            listClienteFiltro.clear();
+//            for (Cliente cliente1: listCliente) {
+//                if (cliente1.getNombre().toLowerCase().contains(filtre.toLowerCase())||
+//                        cliente1.getNumeroIdentificacion().toLowerCase().contains(filtre.toLowerCase())){
+//                    listClienteFiltro.add(cliente1);
+//                }
+//            }
+//            tbCliente.setItems(listClienteFiltro);
+//        }
+//    }
 
 }

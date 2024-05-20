@@ -4,6 +4,6 @@ import java.io.IOException;
 
 public interface InterfaceView {
 
-    void llamarInterfaca() throws IOException;
+    void llamarInterface() throws IOException;
 
 }

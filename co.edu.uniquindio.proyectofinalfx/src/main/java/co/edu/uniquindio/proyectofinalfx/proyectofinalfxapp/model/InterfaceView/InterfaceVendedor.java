@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class InterfaceVendedor implements InterfaceView {
     @Override
-    public void llamarInterfaca() throws IOException {
+    public void llamarInterface() throws IOException {
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("vendedor-view.fxml"));
         Scene scene = new Scene(loader.load());
         Stage stage1 = new Stage();

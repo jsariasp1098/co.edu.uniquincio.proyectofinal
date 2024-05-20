@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class InterfaceAdminstrador implements InterfaceView {
     @Override
-    public void llamarInterfaca() throws IOException {
+    public void llamarInterface() throws IOException {
 
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("administrador-view.fxml"));
         Scene scene = new Scene(loader.load());
